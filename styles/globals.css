@@ -13,14 +13,48 @@ a {
 
 * {
   box-sizing: border-box;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.5rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+html {
+  color-scheme: dark;
+}
+
+body {
+  background: transparent;
+  color: black;
+  padding: 24px;
+  margin: 0;
+}
+
+h2 {
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+  margin-bottom: 24px;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.65rem;
+  letter-spacing: 3px;
+}
+
+@keyframes move {
+  from {
+    transform: translateY(0%);
   }
-  body {
-    color: white;
-    background: black;
+
+  to {
+    transform: translateY(calc(-100% + 100vh - 48px));
   }
+}
+
+#__next {
+  animation-name: move;
+  animation-duration: 120s;
+  animation-timing-function: linear;
+  animation-delay: 9s;
+  animation-fill-mode: forwards;
 }
