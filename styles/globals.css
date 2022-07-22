@@ -12,9 +12,11 @@ a {
 }
 
 * {
+  overflow: hidden;
   box-sizing: border-box;
   font-family: 'Space Grotesk', sans-serif;
   font-size: 1.5rem;
+  -webkit-font-smoothing: antialiased;
 }
 
 html {
@@ -31,6 +33,7 @@ body {
 h2 {
   text-align: center;
   text-transform: uppercase;
+  font-weight: 700;
   margin: 0;
   margin-bottom: 24px;
 }
@@ -38,15 +41,20 @@ h2 {
 p {
   font-size: 1rem;
   line-height: 1.65rem;
-  letter-spacing: 3px;
+  letter-spacing: 1.5px;
+  font-weight: 500;
 }
 
 @keyframes move {
-  from {
-    transform: translateY(0%);
+  0% {
+    transform: translateY(calc(20vh - 24px));
   }
 
-  to {
+  85% {
+    transform: translateY(calc(-100% + 100vh - 48px));
+  }
+
+  100% {
     transform: translateY(calc(-100% + 100vh - 48px));
   }
 }
@@ -55,6 +63,7 @@ p {
   animation-name: move;
   animation-duration: 120s;
   animation-timing-function: linear;
-  animation-delay: 9s;
-  animation-fill-mode: forwards;
+  animation-delay: 2s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
 }
