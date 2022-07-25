@@ -2,7 +2,30 @@ import React from "react";
 import { useRouter } from "next/router";
 import texts from "../../texts.json";
 
-export const getServerSideProps = (ctx) => {
+export const getStaticPaths = () => {
+  return {
+    paths: [
+      {
+        params: {
+          slug: "0",
+        },
+      },
+      {
+        params: {
+          slug: "1",
+        },
+      },
+      {
+        params: {
+          slug: "2",
+        },
+      },
+    ],
+    fallback: false,
+  };
+};
+
+export const getStaticProps = (ctx) => {
   const slug = (ctx.params?.slug as string) || "";
   if (!texts[slug])
     return {
